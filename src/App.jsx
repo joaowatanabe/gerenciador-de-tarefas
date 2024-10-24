@@ -13,19 +13,21 @@ function App() {
   }, [tasks]);
 
   useEffect(() => {
-   const fetchTasks = async () => {
-     //CHAMAR A API
-     const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limits=10', {
-      method: 'GET'
-    })
-    //PEGAR OS DADOS QUE ELA RETORNA
-    const data = await response.json()
+    const fetchTasks = async () => {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos?_limits=10",
+        {
+          method: "GET",
+        }
+      );
 
-    //ARMAZENAR/PERSISTIR OS DADOS NO STATE
-    setTasks(data)
-   }
-   fetchTasks()
-  }, [])
+      const data = await response.json();
+
+      setTasks(data);
+    };
+    //Se quiser você pode chamar uma API para pegar as tarefas
+    // fetchTasks();
+  }, []);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
