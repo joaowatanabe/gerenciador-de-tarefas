@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
-import Tasks from "./components/tasks";
+import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-
 
   // ---- API ---
   // useEffect(() => {
